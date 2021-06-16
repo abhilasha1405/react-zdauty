@@ -1,12 +1,11 @@
 import React from 'react';
 import './style.css';
 
-export default function Button() {
+export default function Button(props) {
+  const {clickAction} = props;
   return (
-    <button className={'button'}>
-      <div>
-        <h1>Button Component</h1>
-      </div>
+    <button className={'button'} onClick={clickAction}>
+      Submit
     </button>
   );
 }

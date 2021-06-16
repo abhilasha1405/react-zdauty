@@ -1,11 +1,10 @@
 import React from 'react';
 import './style.css';
 import Header from './header.js';
-import Button from './button.js';
 import Table from './table.js';
 
 export default function App() {
-  const pets = [
+  const initialPetList = [
     {
       name: 'ice',
       type: 'dog'
@@ -19,11 +18,22 @@ export default function App() {
       type: 'rabbit'
     }
   ];
+
+  const [pets, setPets] = React.useState(initialPetList);
+
+  function handleRemove(index) {
+    const newPetList = pets.filter((pet, i) => i != index);
+    setPets(newPetList);
+  }
   return (
     <div>
       <Header />
-      <Table tableData={pets} />
-      <Button />
+      <Table
+        tableOneHeader={'Pet Name'}
+        tableTwoHeader={'Pet Type'}
+        tableData={pets}
+        onRemove={handleRemove}
+      />
     </div>
   );
 }

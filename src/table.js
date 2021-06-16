@@ -1,15 +1,17 @@
 import React from 'react';
+import Button from './button';
 import './style.css';
 
 export default function Table(props) {
-  const { tableData } = props;
+  const { tableData, tableOneHeader, tableTwoHeader, onRemove } = props;
 
   const tableHeader = () => {
     return (
       <thead>
         <tr>
-          <th>Pet Name</th>
-          <th>Pet Type</th>
+          <th>{tableOneHeader}</th>
+          <th>{tableTwoHeader}</th>
+          <th>Delete</th>
         </tr>
       </thead>
     );
@@ -21,6 +23,9 @@ export default function Table(props) {
         <tr key={index}>
           <td>{row.name}</td>
           <td>{row.type}</td>
+          <td>
+            <Button clickAction={() => onRemove(index)} />
+          </td>
         </tr>
       );
     });

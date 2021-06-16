@@ -4,18 +4,21 @@ p {
 }
 
 .button {
-  border-radius: 15px;
+  border-radius: 5px;
   text-align: center;
-  background-color: blue;
+  background-color: #bebeec;
+  padding: 2px;
+  font-size: 8px;
+  margin-top: 30px;
 }
 
 .header {
   color: black;
-  font-size: 15px;
+  font-size: 10px;
 }
 
 table th,
 td {
-  border: 1px;
+  border: 1px solid black;
   border-color: black;
 }
