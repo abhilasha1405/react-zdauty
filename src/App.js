@@ -1,4 +1,5 @@
 import React from 'react';
+import './style.css';
 import Header from './header.js';
 import Button from './button.js';
 import Table from './table.js';
